@@ -1,0 +1,10 @@
+{
+  "name": "Eminence Stays",
+  "short_name": "Eminence",
+  "description": "A curated collection of luxury UK stays, by the day or by the season.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5efe6",
+  "theme_color": "#1c1b1a",
+  "icons": []
+}
