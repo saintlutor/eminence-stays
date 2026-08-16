@@ -6,18 +6,21 @@ Luxury UK stays landing page — React + Vite + Tailwind, exported from Base44.
 
 ```bash
 npm install
-cp .env.example .env   # add your Base44 app id (needed for the enquiry form)
 npm run dev            # http://localhost:5173
 ```
 
-The site renders fully without a Base44 app id; only the enquiry form submission
-(`base44.entities.Enquiry.create`) and auth pages require it.
+No environment variables are required. The enquiry form writes to Supabase
+(`eminence_enquiries` table, project `gfmjqwgbtramqrizebfp`) via the publishable
+key in `src/lib/supabase.js` — RLS allows anonymous inserts only, so enquiries
+can never be read from the client.
 
 ## Notes
 
-- All imagery is served from Base44's public CDN (`media.base44.com`).
-- Auth scaffolding (Login/Register/OAuth pages) is Base44 boilerplate — the home
-  page itself is public (`requiresAuth: false`).
+- Imagery is served locally from `public/images/`.
+- Auth scaffolding (Login/Register/OAuth pages) is unused Base44 boilerplate —
+  the home page itself is public (`requiresAuth: false`).
+- To read enquiries, use the Supabase dashboard (Table Editor →
+  `eminence_enquiries`).
 
 ## Build
 

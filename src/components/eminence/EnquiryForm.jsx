@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Reveal from "./Reveal";
-import { base44 } from "@/api/base44Client";
+import { supabase } from "@/lib/supabase";
 import { Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -53,7 +53,10 @@ export default function EnquiryForm() {
     }
     setSubmitting(true);
     try {
-      await base44.entities.Enquiry.create(form);
+      const { error: insertError } = await supabase
+        .from("eminence_enquiries")
+        .insert(form);
+      if (insertError) throw insertError;
       setSubmitted(true);
     } catch (err) {
       setError("Something went wrong sending your enquiry. Please try again.");
