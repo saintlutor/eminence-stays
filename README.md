@@ -1,6 +1,7 @@
 # Eminence Stays
 
-Luxury UK stays landing page — React + Vite + Tailwind, exported from Base44.
+Luxury UK stays landing page — React + Vite + Tailwind + Supabase.
+(Originally exported from Base44; the Base44 SDK has been fully removed.)
 
 ## Local development
 
@@ -17,8 +18,7 @@ can never be read from the client.
 ## Notes
 
 - Imagery is served locally from `public/images/`.
-- Auth scaffolding (Login/Register/OAuth pages) is unused Base44 boilerplate —
-  the home page itself is public (`requiresAuth: false`).
+- The site is fully public — there is no auth.
 - To read enquiries, use the Supabase dashboard (Table Editor →
   `eminence_enquiries`).
 
