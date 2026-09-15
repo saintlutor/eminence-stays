@@ -89,4 +89,3 @@ export function nextImageLoadMode(mode) {
     ? IMAGE_LOAD_MODE.ORIGINAL
     : IMAGE_LOAD_MODE.FALLBACK
 }
-s
