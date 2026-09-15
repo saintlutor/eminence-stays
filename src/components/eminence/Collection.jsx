@@ -19,7 +19,7 @@ const PROPERTIES = [
     desc: "A modern brick residence made for gatherings. A private gated drive, open-plan living and room for the whole party — birthdays, reunions and celebrations.",
     img: PARTY_HOUSE_IMG,
     span: "square",
-    price: "From £180 / night",
+    price: "From £450 / night",
   },
   {
     name: "The Horizon House",

@@ -27,6 +27,18 @@ const REVIEWS = [
     name: "Daniel O'Connor",
     detail: "Relocation stay in Birmingham",
   },
+  {
+    quote:
+      "We took the Party House for my mum's 60th. Twenty of us for the weekend and it never once felt crowded. The kitchen handled everything, and the gated drive meant no fuss over parking.",
+    name: "Sophie Bennett",
+    detail: "60th birthday at The Party House",
+  },
+  {
+    quote:
+      "Three nights with old university friends. Huge open living space, bedrooms for everyone, and the team sorted a late check-out without any bother. We're already talking about next year.",
+    name: "Marcus Reid",
+    detail: "Reunion weekend at The Party House",
+  },
 ];
 
 export default function Reviews() {
