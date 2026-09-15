@@ -55,10 +55,10 @@ function PropertyCard({ p, index }) {
           <Image
             src={p.img}
             alt={p.name}
-            className="block w-full h-full transition-transform duration-[1.6s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
+            className="block w-full h-full object-cover object-center transition-transform duration-[1.6s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-basalt/50 via-transparent to-transparent" />
-          <div className="absolute top-5 left-5 text-champagne/90 text-[10px] uppercase tracking-wide-sm">
+          <div className="absolute inset-0 bg-gradient-to-t from-basalt/55 via-transparent to-basalt/25" />
+          <div className="absolute top-5 left-5 border border-champagne/25 bg-basalt/45 px-3 py-1.5 text-champagne text-[10px] uppercase tracking-wide-sm backdrop-blur-md">
             {String(index + 1).padStart(2, "0")} — {p.price}
           </div>
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-champagne">

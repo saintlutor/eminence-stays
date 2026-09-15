@@ -19,7 +19,7 @@ const LONG_POINTS = [
 function SectionBreak({ img }) {
   return (
     <div className="relative h-[42vh] min-h-[280px] overflow-hidden">
-      <Image src={img} alt="" className="block w-full h-full" />
+      <Image src={img} alt="" className="block w-full h-full object-cover" />
       <div className="absolute inset-0 bg-basalt/10" />
     </div>
   );
@@ -53,7 +53,7 @@ export function ShortStays() {
             <Image
               src={BEDROOM_IMG}
               alt="A bright, airy short-stay bedroom with fresh linen"
-              className="block w-full h-full"
+              className="block w-full h-full object-cover"
             />
           </div>
         </Reveal>
@@ -75,7 +75,7 @@ export function LongStays() {
             <Image
               src={LONGLIVING_IMG}
               alt="An elegant furnished long-term apartment living room"
-              className="block w-full h-full"
+              className="block w-full h-full object-cover"
             />
           </div>
         </Reveal>

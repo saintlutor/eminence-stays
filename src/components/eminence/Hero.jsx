@@ -10,7 +10,7 @@ export default function Hero() {
         <Image
           src={HERO_IMG}
           alt="A luxury villa interior at golden hour overlooking a misty mountain valley"
-          className="block w-full h-full"
+          className="block w-full h-full object-cover"
         />
       </div>
       {/* tonal grade for legibility */}
