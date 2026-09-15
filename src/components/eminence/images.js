@@ -3,6 +3,7 @@
 export const HERO_IMG = "/images/hero.png";
 export const PENTHOUSE_IMG = "/images/penthouse.png";
 export const COTTAGE_IMG = "/images/cottage.png";
+export const PARTY_HOUSE_IMG = "/images/party-house.jpg";
 export const SEASIDE_IMG = "/images/seaside.png";
 export const WATERDROP_IMG = "/images/waterdrop.png";
 export const BEDROOM_IMG = "/images/bedroom.png";

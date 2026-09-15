@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "@/components/ui/image";
 import Reveal from "./Reveal";
-import { PENTHOUSE_IMG, COTTAGE_IMG, SEASIDE_IMG } from "./images";
+import { PENTHOUSE_IMG, PARTY_HOUSE_IMG, SEASIDE_IMG } from "./images";
 import { ArrowUpRight } from "lucide-react";
 
 const PROPERTIES = [
@@ -14,10 +14,10 @@ const PROPERTIES = [
     price: "From £240 / night",
   },
   {
-    name: "The Stone Cottage",
-    location: "Lake District",
-    desc: "A secluded retreat of warm stone and climbing ivy. Golden-hour light, a log burner, and silence.",
-    img: COTTAGE_IMG,
+    name: "The Party House",
+    location: "Group Stays · Gated Grounds",
+    desc: "A modern brick residence made for gatherings. A private gated drive, open-plan living and room for the whole party — birthdays, reunions and celebrations.",
+    img: PARTY_HOUSE_IMG,
     span: "square",
     price: "From £180 / night",
   },
