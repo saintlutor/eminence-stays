@@ -11,7 +11,7 @@ export const EVENT_RENTAL_TYPE = "Celebration or event (1–3 nights)";
 const LOCATIONS = ["London", "Manchester", "Edinburgh", "Birmingham", "Other"];
 const RENTAL_TYPES = ["Short-term (daily or weekly)", EVENT_RENTAL_TYPE, "Long-term (6+ months)"];
 const GUESTS = ["1-2", "3-4", "5-9", "10-19", "20+"];
-const PROPERTY_TYPES = ["Apartment", "Holiday home", "Furnished house", PARTY_HOUSE_TYPE];
+const PROPERTY_TYPES = [PARTY_HOUSE_TYPE, "Apartment", "Holiday home", "Furnished house"];
 const TIMING = ["ASAP", "Within 1 week", "Within 1 month", "1–3 months", "Just browsing"];
 
 function Field({ label, children, required }) {
