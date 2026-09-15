@@ -2,6 +2,8 @@ import React from "react";
 import { Image } from "@/components/ui/image";
 import Reveal from "./Reveal";
 import { PENTHOUSE_IMG, PARTY_HOUSE_IMG, SEASIDE_IMG } from "./images";
+import { prefillEnquiry } from "@/lib/enquiry-prefill";
+import { PARTY_HOUSE_TYPE, EVENT_RENTAL_TYPE } from "./EnquiryForm";
 import { ArrowUpRight } from "lucide-react";
 
 const PROPERTIES = [
@@ -12,6 +14,7 @@ const PROPERTIES = [
     img: PENTHOUSE_IMG,
     span: "tall",
     price: "From £240 / night",
+    enquiry: { preferred_property_type: "Apartment", preferred_location: "Manchester" },
   },
   {
     name: "The Party House",
@@ -20,6 +23,7 @@ const PROPERTIES = [
     img: PARTY_HOUSE_IMG,
     span: "square",
     price: "From £450 / night",
+    enquiry: { preferred_property_type: PARTY_HOUSE_TYPE, rental_type: EVENT_RENTAL_TYPE },
   },
   {
     name: "The Horizon House",
@@ -28,6 +32,7 @@ const PROPERTIES = [
     img: SEASIDE_IMG,
     span: "wide",
     price: "From £320 / night",
+    enquiry: { preferred_property_type: "Holiday home", preferred_location: "Other" },
   },
 ];
 
@@ -40,7 +45,12 @@ function PropertyCard({ p, index }) {
       : "h-[52vh]";
   return (
     <Reveal delay={index * 0.1} className="group">
-      <div className="relative overflow-hidden">
+      <a
+        href="#enquiry"
+        onClick={() => prefillEnquiry(p.enquiry)}
+        aria-label={`Enquire about ${p.name}`}
+        className="relative block overflow-hidden cursor-pointer"
+      >
         <div className={`relative ${heightClass}`}>
           <Image
             src={p.img}
@@ -63,7 +73,7 @@ function PropertyCard({ p, index }) {
             />
           </div>
         </div>
-      </div>
+      </a>
       <p className="mt-5 max-w-md text-stone-mist text-[15px] leading-[1.7]">{p.desc}</p>
     </Reveal>
   );

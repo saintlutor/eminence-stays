@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 import { supabase } from "@/lib/supabase";
+import { ENQUIRY_PREFILL_EVENT } from "@/lib/enquiry-prefill";
 import { Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+export const PARTY_HOUSE_TYPE = "Party house";
+export const EVENT_RENTAL_TYPE = "Celebration or event (1–3 nights)";
+
 const LOCATIONS = ["London", "Manchester", "Edinburgh", "Birmingham", "Other"];
-const RENTAL_TYPES = ["Short-term (daily or weekly)", "Long-term (6+ months)"];
-const GUESTS = ["1-2", "3-4", "5+"];
-const PROPERTY_TYPES = ["Apartment", "Holiday home", "Furnished house"];
+const RENTAL_TYPES = ["Short-term (daily or weekly)", EVENT_RENTAL_TYPE, "Long-term (6+ months)"];
+const GUESTS = ["1-2", "3-4", "5-9", "10-19", "20+"];
+const PROPERTY_TYPES = ["Apartment", "Holiday home", "Furnished house", PARTY_HOUSE_TYPE];
 const TIMING = ["ASAP", "Within 1 week", "Within 1 month", "1–3 months", "Just browsing"];
 
 function Field({ label, children, required }) {
@@ -43,6 +47,22 @@ export default function EnquiryForm() {
   const [error, setError] = useState("");
 
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  // A party-style enquiry is priced per night around an occasion, so a few
+  // labels read differently.
+  const isParty =
+    form.preferred_property_type === PARTY_HOUSE_TYPE || form.rental_type === EVENT_RENTAL_TYPE;
+
+  // Collection cards can pre-fill the form (see lib/enquiry-prefill.js).
+  useEffect(() => {
+    const onPrefill = (e) => {
+      setForm((f) => ({ ...f, ...(e.detail || {}) }));
+      setSubmitted(false);
+      setError("");
+    };
+    window.addEventListener(ENQUIRY_PREFILL_EVENT, onPrefill);
+    return () => window.removeEventListener(ENQUIRY_PREFILL_EVENT, onPrefill);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,8 +108,13 @@ export default function EnquiryForm() {
             </p>
             <p>
               <span className="block text-[11px] uppercase tracking-wide-sm text-basalt">Payment</span>
-              Short stays: pay only the full cost by bank transfer. Long-term: a fully refundable £500
-              reservation deposit, deducted from your rent.
+              Short stays and celebrations: pay only the full cost by bank transfer. Long-term: a
+              fully refundable £500 reservation deposit, deducted from your rent.
+            </p>
+            <p>
+              <span className="block text-[11px] uppercase tracking-wide-sm text-basalt">Celebrating?</span>
+              Choose “Party house” below and tell us the occasion and headcount — we'll confirm the
+              house, the house rules and the exact total.
             </p>
           </div>
         </Reveal>
@@ -185,12 +210,12 @@ export default function EnquiryForm() {
                   ))}
                 </select>
               </Field>
-              <Field label="Monthly budget (in GBP)">
+              <Field label={isParty ? "Budget per night (in GBP)" : "Monthly budget (in GBP)"}>
                 <input
                   className={inputBase}
                   value={form.monthly_budget}
                   onChange={(e) => set("monthly_budget", e.target.value)}
-                  placeholder="e.g. £1,800"
+                  placeholder={isParty ? "e.g. £450" : "e.g. £1,800"}
                 />
               </Field>
               <Field label="Preferred property type">
@@ -205,7 +230,7 @@ export default function EnquiryForm() {
                   ))}
                 </select>
               </Field>
-              <Field label="When do you want to move in?">
+              <Field label={isParty ? "When is the occasion?" : "When do you want to move in?"}>
                 <select
                   className={cn(inputBase, "appearance-none")}
                   value={form.move_in_timing}
@@ -224,7 +249,11 @@ export default function EnquiryForm() {
                     className={cn(inputBase, "resize-none")}
                     value={form.additional_requirements}
                     onChange={(e) => set("additional_requirements", e.target.value)}
-                    placeholder="Additional requirements, preferences, dates…"
+                    placeholder={
+                      isParty
+                        ? "The occasion, exact dates, headcount, anything you'd like arranged…"
+                        : "Additional requirements, preferences, dates…"
+                    }
                   />
                 </Field>
               </div>

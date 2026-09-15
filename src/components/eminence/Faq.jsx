@@ -17,6 +17,10 @@ const FAQS = [
     a: "Short stays pay only the full cost of the day or days you book, by bank transfer. No deposit, no hidden extras — we confirm the exact amount before you commit.",
   },
   {
+    q: "Can I book The Party House for a celebration?",
+    a: "Yes — birthdays, reunions and celebrations are exactly what it's for. Choose “Party house” in the enquiry form and tell us the occasion, dates and headcount. We confirm availability, the house rules and the exact total before you commit. It's priced per night from £450 and paid in full by bank transfer, like any short stay.",
+  },
+  {
     q: "Does payment guarantee the property?",
     a: "We confirm availability first. Once the agreed amount is received by bank transfer, your stay is secured. We'll walk you through every step.",
   },

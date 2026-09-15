@@ -5,7 +5,7 @@ const STEPS = [
   {
     no: "01",
     title: "Enquire",
-    body: "Tell us what you're looking for — location, dates, guests, budget. One simple form, no deposit to enquire.",
+    body: "Tell us what you're looking for — location, dates, guests, budget, or the occasion you're celebrating. One simple form, no deposit to enquire.",
   },
   {
     no: "02",

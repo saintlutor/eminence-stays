@@ -7,7 +7,7 @@ const SHORT_POINTS = [
   { title: "Book by the day", body: "Need a base for a few nights? Stylish flats and holiday homes, ready when you are." },
   { title: "Or settle in weekly", body: "Staying a week or two keeps your budget kinder, and keeps you in the same home throughout." },
   { title: "Fully furnished, ready now", body: "Bedding, towels, kitchen essentials — every home comes complete. Just bring your bags." },
-  { title: "All across the UK", body: "From city apartments to countryside retreats, we point you to a spot that suits your plans." },
+  { title: "Celebrate together", body: "Birthdays, reunions, hen and stag weekends — The Party House sleeps the whole group under one roof, from £450 a night." },
 ];
 
 const LONG_POINTS = [
@@ -35,8 +35,8 @@ export function ShortStays() {
             By the day,<br />or by the week.
           </h2>
           <p className="mt-6 max-w-md text-stone-mist text-[17px] leading-[1.7]">
-            Skip the one-size-fits-all rental. Booking daily or weekly, we match you with a home that
-            fits your plans — not the other way round.
+            Skip the one-size-fits-all rental. From city apartments to countryside retreats across
+            the UK, we match you with a home that fits your plans — not the other way round.
           </p>
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-7">
             {SHORT_POINTS.map((pt) => (
