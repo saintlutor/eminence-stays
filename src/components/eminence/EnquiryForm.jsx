@@ -79,6 +79,14 @@ export default function EnquiryForm() {
           </p>
           <div className="mt-10 space-y-4 text-[14px] text-stone-mist leading-[1.7]">
             <p>
+              <span className="block text-[11px] uppercase tracking-wide-sm text-basalt">Prefer to talk?</span>
+              Call or WhatsApp our concierge on{" "}
+              <a href="tel:+447949421967" className="text-basalt border-b border-basalt/30 pb-px">
+                07949 421967
+              </a>
+              .
+            </p>
+            <p>
               <span className="block text-[11px] uppercase tracking-wide-sm text-basalt">Payment</span>
               Short stays: pay only the full cost by bank transfer. Long-term: a fully refundable £500
               reservation deposit, deducted from your rent.

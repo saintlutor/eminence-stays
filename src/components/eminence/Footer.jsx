@@ -45,6 +45,9 @@ export default function Footer() {
             <a href="mailto:concierge@eminencestays.co.uk" className="mt-4 block font-display text-2xl font-light text-champagne">
               concierge@eminencestays.co.uk
             </a>
+            <a href="tel:+447949421967" className="mt-2 block font-display text-2xl font-light text-champagne">
+              07949 421967
+            </a>
             <a href="#enquiry" className="mt-6 inline-block border-b border-champagne/40 pb-1 text-[12px] uppercase tracking-wide-sm text-champagne">
               Make an enquiry
             </a>
